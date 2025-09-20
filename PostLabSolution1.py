@@ -1,25 +1,36 @@
-from collections import Counter
 
-def mean(data):
-    if not data:
-        raise ValueError("mean requires at least one data point")
-    return sum(data) / len(data)
+def mean(numbers):
+    if not numbers:
+        return 0
+    return sum(numbers) / len(numbers)
 
-def median(data):
-    n = len(data)
-    if n == 0: 
-        raise ValueError("median requires at least one data point")
-    s = sorted(data)
+def median(numbers):
+    if not numbers:
+        return 0
+    nums = sorted(numbers)
+    n = len(nums)
     mid = n // 2
-    if n % 2 == 1:  
-        return s[mid]
-    else:
-        return (s[mid - 1] + s[mid]) / 2
+    if n % 2 == 1:
+        return nums[mid]
+    return (nums[mid - 1] + nums[mid]) / 2
 
-def mode(data):
-    if not data:
-        raise ValueError("mode requires at least one data point")
-    counts = Counter(data)
+def mode(numbers):
+    if not numbers:
+        return 0
+    counts = {}
+    for x in numbers:
+        counts[x] = counts.get(x, 0) + 1
     max_count = max(counts.values())
-    tied = [val for val, cnt in counts.items() if cnt == max_count]
-    return min(tied)
+    for x in numbers:
+        if counts[x] == max_count:
+            return x
+
+# Main Function (Test List)
+def main():
+    data = [10, 20, 20, 30, 40] 
+    print("Mean:", mean(data))
+    print("Median:", median(data))
+    print("Mode:", mode(data))
+
+if __name__ == "__main__":
+    main()
