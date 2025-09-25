@@ -40,7 +40,7 @@ conn.row_factory = sqlite3.Row
 cur = conn.cursor()
 
 if not os.path.exists(DROP_SQL_PATH) or not os.path.exists(CREATE_SQL_PATH):
-    raise FileNotFoundError("SQL files not found. Put OracleDropColonial.sql and OracleColonial.sql at the paths specified.")
+    raise FileNotFoundError
 
 with open(DROP_SQL_PATH, "r", encoding="utf-8") as f:
     drop_sql = f.read()
