@@ -32,7 +32,6 @@ class Student(object):
     def __str__(self):
         return f"Name: {self.name} Scores: {' '.join(map(str, self.scores))}"
 
-    # Comparison operators (compare by name)
     def __eq__(self, other):
         if not isinstance(other, Student):
             return NotImplemented
@@ -50,7 +49,6 @@ class Student(object):
 
 
 def main():
-    # Create several Student objects with different names
     students = [
         Student("Alice", 3),
         Student("Zoe", 2),
@@ -59,7 +57,6 @@ def main():
         Student("Eve", 2)
     ]
 
-    # Give a few sample scores (optional; keeps output informative)
     students[0].setScore(1, 85)
     students[0].setScore(2, 90)
     students[1].setScore(1, 75)
@@ -72,14 +69,12 @@ def main():
         print(s)
     print()
 
-    # Shuffle the list
     random.shuffle(students)
     print("After shuffle:")
     for s in students:
         print(s)
     print()
 
-    # Sort the list (uses Student.__lt__ to compare by name)
     students.sort()
     print("After sort:")
     for s in students:
