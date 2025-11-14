@@ -3,12 +3,36 @@ This README explains how to run and operate the ShareTray prototype, which inclu
 
 
 ________________________________________
-Files in this repo
-•	models_repo.py — Pydantic models + InMemoryRepo and optional MongoRepo adapter.
-•	state_machine.py — donation lifecycle rules + audit logging + small FastAPI endpoints.
-•	user_roles_criteria.py — CLI manager for roles & acceptance-criteria templates.
-•	api.py — async FastAPI app (uses database.py, JWT auth via role.py, audit logging).
-•	api_app.py — self-contained minimal FastAPI app that can run with the local repo (sync). Good for fast dev.
-•	audit.py — audit logging helper used by api.py.
-•	role.py — authentication & role-based dependencies (JWT, password hashing).
-•	database.py — async Motor wrapper (new): init_db, CRUD helpers (used by api.py / role.py / audit.py).
+Files Contained within the Project Proposal Repository
+
+•	models_repo.py 
+	
+	- Contains the Pydantic Models, InMemory Repo and the MongoRepo Adapter.
+
+•	state_machine.py —
+	
+	- Contains the Donation Lifecycle Constraints, Audit Logging Systems and FastAPI modules.
+
+•	user_roles_criteria.py 
+
+	- Contains the CLI Manager for Roles & Acceptance Criteria Templates.
+
+•	api.py 
+
+	- Contains the Asynchronous FastAPI Application.
+
+•	api_app.py 
+
+	- Contains the Self-Contained FastAPI Application.
+
+•	audit.py 
+
+	- Contains the Audit Logging Helper used by api.py.
+
+•	role.py — 
+
+	- Contains the Authentication and Role-Based Dependencies (JWT and Password Hashing).
+
+•	database.py 
+	
+	- Contains async Motor wrapper (new): init_db, CRUD helpers (used by api.py / role.py / audit.py).
